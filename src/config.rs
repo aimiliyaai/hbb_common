@@ -110,7 +110,7 @@ const CHARS: &[char] = &[
 ];
 
 pub const RENDEZVOUS_SERVERS: &[&str] = &["rust.ayypd.cn"];
-pub const RS_PUB_KEY: &str = "anime129";
+pub const RS_PUB_KEY: &str = "ShT9gup4KsFFJDLZfyvy5Hbl0sE07KqZVxyzKUhkcPA=";
 
 pub const RENDEZVOUS_PORT: i32 = 21116;
 pub const RELAY_PORT: i32 = 21117;
