@@ -109,8 +109,8 @@ const CHARS: &[char] = &[
     'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 ];
 
-pub const RENDEZVOUS_SERVERS: &[&str] = &["101.237.129.79"];
-pub const RS_PUB_KEY: &str = "O9S5gbcoclrMfjvNUco1H59D9R4Dl+7OOI4oR9cFeeQ=";
+pub const RENDEZVOUS_SERVERS: &[&str] = &["rust.ayypd.cn"];
+pub const RS_PUB_KEY: &str = "anime129";
 
 pub const RENDEZVOUS_PORT: i32 = 21116;
 pub const RELAY_PORT: i32 = 21117;

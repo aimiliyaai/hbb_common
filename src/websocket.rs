@@ -409,14 +409,14 @@ mod tests {
         assert_eq!(check_ws("127.0.0.1:21115"), "ws://127.0.0.1:21118");
         assert_eq!(check_ws("127.0.0.1:21116"), "ws://127.0.0.1:21118");
         assert_eq!(check_ws("127.0.0.1:21117"), "ws://127.0.0.1:21119");
-        assert_eq!(check_ws("101.237.129.79:21115"), "ws://101.237.129.79/ws/id");
-        assert_eq!(check_ws("101.237.129.79:21116"), "ws://101.237.129.79/ws/id");
-        assert_eq!(check_ws("101.237.129.79:21117"), "ws://101.237.129.79/ws/relay");
+        assert_eq!(check_ws("rust.ayypd.cn:21115"), "ws://rust.ayypd.cn/ws/id");
+        assert_eq!(check_ws("rust.ayypd.cn:21116"), "ws://rust.ayypd.cn/ws/id");
+        assert_eq!(check_ws("rust.ayypd.cn:21117"), "ws://rust.ayypd.cn/ws/relay");
         // set relay-server without port
         Config::set_option("relay-server".to_string(), "127.0.0.1".to_string());
         Config::set_option(
             "api-server".to_string(),
-            "http://101.237.129.79:21113".to_string(),
+            "http://rust.ayypd.cn:21113".to_string(),
         );
         assert_eq!(
             check_ws("[0:0:0:0:0:0:0:1]:21115"),
@@ -430,11 +430,11 @@ mod tests {
             check_ws("[0:0:0:0:0:0:0:1]:21117"),
             "ws://[0:0:0:0:0:0:0:1]:21119"
         );
-        assert_eq!(check_ws("101.237.129.79:21115"), "wss://101.237.129.79/ws/id");
-        assert_eq!(check_ws("101.237.129.79:21116"), "wss://101.237.129.79/ws/id");
+        assert_eq!(check_ws("rust.ayypd.cn:21115"), "wss://rust.ayypd.cn/ws/id");
+        assert_eq!(check_ws("rust.ayypd.cn:21116"), "wss://rust.ayypd.cn/ws/id");
         assert_eq!(
-            check_ws("101.237.129.79:21117"),
-            "wss://101.237.129.79/ws/relay"
+            check_ws("rust.ayypd.cn:21117"),
+            "wss://rust.ayypd.cn/ws/relay"
         );
         // set relay-server with default port
         Config::set_option("relay-server".to_string(), "127.0.0.1:21117".to_string());
@@ -443,11 +443,11 @@ mod tests {
         assert_eq!(check_ws("127.0.0.1:21117"), "ws://127.0.0.1:21119");
         // set relay-server with custom port
         Config::set_option("relay-server".to_string(), "127.0.0.1:34567".to_string());
-        assert_eq!(check_ws("101.237.129.79:21115"), "wss://101.237.129.79/ws/id");
-        assert_eq!(check_ws("101.237.129.79:21116"), "wss://101.237.129.79/ws/id");
+        assert_eq!(check_ws("rust.ayypd.cn:21115"), "wss://rust.ayypd.cn/ws/id");
+        assert_eq!(check_ws("rust.ayypd.cn:21116"), "wss://rust.ayypd.cn/ws/id");
         assert_eq!(
-            check_ws("101.237.129.79:34567"),
-            "wss://101.237.129.79/ws/relay"
+            check_ws("rust.ayypd.cn:34567"),
+            "wss://rust.ayypd.cn/ws/relay"
         );
 
         // set custom-rendezvous-server without port
